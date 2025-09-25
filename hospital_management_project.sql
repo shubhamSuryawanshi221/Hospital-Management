@@ -1,8 +1,8 @@
-CREATE DATABASE hospital_db;
-USE hospital_db;
+>> CREATE DATABASE hospital_db;
+>> USE hospital_db;
 
 
-CREATE TABLE patients (
+>> CREATE TABLE patients (
     patient_id INT AUTO_INCREMENT PRIMARY KEY,
     name VARCHAR(100),
     age INT,
@@ -11,14 +11,14 @@ CREATE TABLE patients (
     state VARCHAR(50)
 );
 
-CREATE TABLE doctors (
+>> CREATE TABLE doctors (
     doctor_id INT AUTO_INCREMENT PRIMARY KEY,
     name VARCHAR(100),
     specialization VARCHAR(100),
     department VARCHAR(50)
 );
 
-CREATE TABLE appointments (
+>> CREATE TABLE appointments (
     appointment_id INT AUTO_INCREMENT PRIMARY KEY,
     patient_id INT,
     doctor_id INT,
@@ -28,7 +28,7 @@ CREATE TABLE appointments (
     FOREIGN KEY (doctor_id) REFERENCES doctors(doctor_id)
 );
 
-CREATE TABLE treatments (
+>> CREATE TABLE treatments (
     treatment_id INT AUTO_INCREMENT PRIMARY KEY,
     patient_id INT,
     doctor_id INT,
@@ -40,7 +40,7 @@ CREATE TABLE treatments (
     FOREIGN KEY (doctor_id) REFERENCES doctors(doctor_id)
 );
 
-CREATE TABLE billing (
+>> CREATE TABLE billing (
     bill_id INT AUTO_INCREMENT PRIMARY KEY,
     patient_id INT,
     treatment_id INT,
@@ -50,16 +50,16 @@ CREATE TABLE billing (
     FOREIGN KEY (treatment_id) REFERENCES treatments(treatment_id)
 );
 
-INSERT INTO doctors (name, specialization, department) VALUES ('Dr. A Sharma','Cardiology','Cardiology');
-INSERT INTO doctors (name, specialization, department) VALUES ('Dr. B Patel','Neurology','Neurology');
-INSERT INTO doctors (name, specialization, department) VALUES ('Dr. C Khan','Orthopedics','Orthopedics');
-INSERT INTO doctors (name, specialization, department) VALUES ('Dr. D Mehta','Dermatology','Dermatology');
-INSERT INTO doctors (name, specialization, department) VALUES ('Dr. E Nair','Pediatrics','Pediatrics');
-INSERT INTO doctors (name, specialization, department) VALUES ('Dr. F Singh','Oncology','Oncology');
-INSERT INTO doctors (name, specialization, department) VALUES ('Dr. G Reddy','General Medicine','General Medicine');
-INSERT INTO doctors (name, specialization, department) VALUES ('Dr. H Choudhary','ENT','ENT');
-INSERT INTO doctors (name, specialization, department) VALUES ('Dr. I Roy','Ophthalmology','Ophthalmology');
-INSERT INTO doctors (name, specialization, department) VALUES ('Dr. J Gupta','Psychiatry','Psychiatry');
+>>INSERT INTO doctors (name, specialization, department) VALUES ('Dr. A Sharma','Cardiology','Cardiology');
+>>INSERT INTO doctors (name, specialization, department) VALUES ('Dr. B Patel','Neurology','Neurology');
+>>INSERT INTO doctors (name, specialization, department) VALUES ('Dr. C Khan','Orthopedics','Orthopedics');
+>>INSERT INTO doctors (name, specialization, department) VALUES ('Dr. D Mehta','Dermatology','Dermatology');
+>>INSERT INTO doctors (name, specialization, department) VALUES ('Dr. E Nair','Pediatrics','Pediatrics');
+>>INSERT INTO doctors (name, specialization, department) VALUES ('Dr. F Singh','Oncology','Oncology');
+>>INSERT INTO doctors (name, specialization, department) VALUES ('Dr. G Reddy','General Medicine','General Medicine');
+>>INSERT INTO doctors (name, specialization, department) VALUES ('Dr. H Choudhary','ENT','ENT');
+>>INSERT INTO doctors (name, specialization, department) VALUES ('Dr. I Roy','Ophthalmology','Ophthalmology');
+>>INSERT INTO doctors (name, specialization, department) VALUES ('Dr. J Gupta','Psychiatry','Psychiatry');
 
 INSERT INTO patients (name, age, gender, city, state) VALUES ('Ankit Verma',32,'Male','Mumbai','Maharashtra');
 INSERT INTO patients (name, age, gender, city, state) VALUES ('Priya Iyer',28,'Female','Pune','Maharashtra');
